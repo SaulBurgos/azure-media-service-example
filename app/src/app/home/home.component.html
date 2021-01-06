@@ -1,0 +1,107 @@
+<div class="row">
+	<div class="col-12 text-center mt-3 mb-3">
+		<h1>
+			<img
+				height="50"
+				src="https://addplaybuttontoimage.way4info.net/Images/Icons/13.png"
+			/>
+			LuluTube
+		</h1>
+	</div>
+</div>
+
+<div class="row mb-3">
+	<div class="input-group mb-3">
+		<div class="custom-file">
+			<input
+				#fileInput
+				type="file"
+				class="custom-file-input"
+				id="inputGroupFile02"
+				#fileInput
+				multiple="multiple"
+				(change)="onSelected($event.target.files)"
+				accept="video/*"
+			/>
+			<label
+				class="custom-file-label"
+				for="inputGroupFile02"
+				aria-describedby="inputGroupFileAddon02"
+				>Choose file</label
+			>
+		</div>
+		<div class="input-group-append">
+			<span
+				class="input-group-text"
+				id="inputGroupFileAddon02"
+				(click)="process()"
+				>Upload</span
+			>
+		</div>
+	</div>
+</div>
+
+<div class="row justify-content-md-center mb-3">
+	<ul class="list-group">
+		<li *ngFor="let file of this.filesToUpload" class="list-group-item">
+			<span>{{ file.name }}</span>
+			<span>
+				||
+				<span *ngIf="file.inputAssetResourceId != ''">✔️</span>
+				<span *ngIf="file.inputAssetResourceId == ''">⛔</span>
+				Input Asset
+			</span>
+			<span> || ⬆️ {{ file.progress }} </span>
+			<span>
+				||
+				<span *ngIf="file.outputAssetResourceId != ''">✔️</span>
+				<span *ngIf="file.outputAssetResourceId == ''">⛔</span>
+				Output Asset
+			</span>
+			<span>
+				||
+				<span *ngIf="file.jobResourceId != ''">✔️</span>
+				<span *ngIf="file.jobResourceId == ''">⛔</span>
+				Job Submited
+			</span>
+			<span>
+				||
+				<span *ngIf="file.streamingLocatorResourceId != ''">✔️</span>
+				<span *ngIf="file.streamingLocatorResourceId == ''">⛔</span>
+				Stream locators
+			</span>
+			<span>
+				||
+				<span *ngIf="file.saved">✔️</span>
+				<span *ngIf="!file.saved">⛔</span>
+				Save
+			</span>
+		</li>
+	</ul>
+</div>
+
+<div class="row text-center" *ngIf="loadingVideos">
+	<h3 class="col-12">Loading videos...</h3>
+</div>
+
+<div class="row mt-2 justify-content-md-center">
+	<div class="col-md-3 thumb mr-2 mb-4" *ngFor="let item of videosUploaded">
+		<div
+			id="container-{{ item.rowKey }}"
+			class="embed-responsive fullHeight videoItem"
+		>
+			<video id="{{ item.rowKey }}" class="azuremediaplayer amp-default-skin">
+				<source src="" type="application/vnd.ms-sstr+xml" />
+				<p class="amp-no-js">
+					To view this video please enable JavaScript, and consider upgrading to
+					a web browser that supports HTML5 video
+				</p>
+			</video>
+		</div>
+
+		<!-- <div class="text-center">
+			<span *ngIf="item.jobDone">✔️ processed</span>
+			<span *ngIf="!item.jobDone">⛔ Job Pending</span>
+		</div> -->
+	</div>
+</div>

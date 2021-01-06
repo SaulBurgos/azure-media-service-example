@@ -1,0 +1,20 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AadClientId": "",
+    "AadEndpoint": "",
+    "AadSecret": "",
+    "AadTenantId": "",
+    "AccountName": "",
+    "ArmAadAudience": "",
+    "ArmEndpoint": "",
+    "Region": "",
+    "ResourceGroup": "",
+    "RolesDefault": "true",
+    "ServicePrincipalName": "",
+    "SubscriptionId": ""
+  },
+  "Host": { "LocalHttpPort": 7071, "CORS": "*" }
+}
