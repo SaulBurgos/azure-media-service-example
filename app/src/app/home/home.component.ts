@@ -22,8 +22,8 @@ export class HomeComponent implements OnInit {
 		connectionStringStorage: '',
 	};
 
-	// webApiUrl = 'http://localhost:7071/api/';
-	webApiUrl = '';
+	// Your local Azure function URL
+	webApiUrl = 'http://localhost:7071/api/';
 	httpHeaders = new HttpHeaders({
 		'Content-Type': 'application/json',
 	});
