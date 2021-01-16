@@ -19,7 +19,7 @@ Once you have all the those resources you need to create an AD Service principle
 - Replace **"your-mediaservice-name"** with the name of your azure media service
 - Replace **"your-resource-group"** with the name of the resource group where is locate your azure media service.
 
-You will the credentials of you AD service principle that the SDK need to authenticate requests. it look will look something like this:
+You will get the credentials of your "AD service principle" that the SDK need to authenticate requests. it look will look something like this:
 
 ```json
 {
